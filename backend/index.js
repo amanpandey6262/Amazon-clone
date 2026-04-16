@@ -332,3 +332,6 @@ const port = process.env.PORT || 3001;
 app.listen(port, () => {
   console.log(`Server running on port ${port}`);
 });
+
+// Export the app for Vercel serverless deployment
+module.exports = app;
