@@ -10,7 +10,7 @@ function Cart({ refreshCart }) {
 
   const fetchCart = async () => {
     try {
-      const res = await axios.get('http://localhost:3001/api/cart');
+      const res = await axios.get('https://amazon-clone-0344.onrender.com/api/cart');
       setCartItems(res.data);
     } catch (err) {
       console.error('Error fetching cart', err);
@@ -23,7 +23,7 @@ function Cart({ refreshCart }) {
 
   const handleUpdateQuantity = async (id, quantity) => {
     try {
-      await axios.put(`http://localhost:3001/api/cart/${id}`, { quantity });
+      await axios.put(`https://amazon-clone-0344.onrender.com/api/cart/${id}`, { quantity });
       fetchCart();
       if (refreshCart) refreshCart();
     } catch (err) {
@@ -33,7 +33,7 @@ function Cart({ refreshCart }) {
 
   const handleRemove = async (id) => {
     try {
-      await axios.delete(`http://localhost:3001/api/cart/${id}`);
+      await axios.delete(`https://amazon-clone-0344.onrender.com/api/cart/${id}`);
       fetchCart();
       if (refreshCart) refreshCart();
     } catch (err) {

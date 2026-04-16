@@ -11,7 +11,7 @@ function Orders() {
   useEffect(() => {
     const fetchOrders = async () => {
       try {
-        const res = await axios.get('http://localhost:3001/api/orders');
+        const res = await axios.get('https://amazon-clone-0344.onrender.com/api/orders');
         setOrders(res.data);
       } catch (err) {
         console.error('Error fetching orders', err);

@@ -14,7 +14,7 @@ function Wishlist({ refreshCart }) {
 
   const fetchWishlist = async () => {
     try {
-      const res = await axios.get('http://localhost:3001/api/wishlist');
+      const res = await axios.get('https://amazon-clone-0344.onrender.com/api/wishlist');
       setWishlist(res.data);
     } catch (err) {
       console.error('Error fetching wishlist', err);
@@ -25,7 +25,7 @@ function Wishlist({ refreshCart }) {
 
   const removeFromWishlist = async (id) => {
     try {
-      await axios.delete(`http://localhost:3001/api/wishlist/${id}`);
+      await axios.delete(`https://amazon-clone-0344.onrender.com/api/wishlist/${id}`);
       setWishlist(wishlist.filter(item => item.id !== id));
     } catch (err) {
       console.error('Error removing from wishlist', err);
@@ -34,7 +34,7 @@ function Wishlist({ refreshCart }) {
 
   const moveToCart = async (item) => {
     try {
-      await axios.post('http://localhost:3001/api/cart', {
+      await axios.post('https://amazon-clone-0344.onrender.com/api/cart', {
         productId: item.productId,
         quantity: 1
       });

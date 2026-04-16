@@ -11,7 +11,7 @@ function Checkout({ refreshCart }) {
   useEffect(() => {
     const fetchCart = async () => {
       try {
-        const res = await axios.get('http://localhost:3001/api/cart');
+        const res = await axios.get('https://amazon-clone-0344.onrender.com/api/cart');
         setCartItems(res.data);
         if (res.data.length === 0) {
           navigate('/cart');
@@ -30,7 +30,7 @@ function Checkout({ refreshCart }) {
   const handlePlaceOrder = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post('http://localhost:3001/api/orders', { address });
+      const res = await axios.post('https://amazon-clone-0344.onrender.com/api/orders', { address });
       if (refreshCart) refreshCart();
       navigate('/order-confirmation', { state: { orderId: res.data.id, totalAmount: res.data.totalAmount } });
     } catch (err) {

@@ -15,7 +15,7 @@ function App() {
 
   const fetchCartCount = async () => {
     try {
-      const res = await axios.get('http://localhost:3001/api/cart');
+      const res = await axios.get('https://amazon-clone-0344.onrender.com/api/cart');
       const count = res.data.reduce((acc, item) => acc + item.quantity, 0);
       setCartItemCount(count);
     } catch (err) {

@@ -12,7 +12,7 @@ function ProductDetail({ refreshCart }) {
   useEffect(() => {
     const fetchProduct = async () => {
       try {
-        const res = await axios.get(`http://localhost:3001/api/products/${id}`);
+        const res = await axios.get(`https://amazon-clone-0344.onrender.com/api/products/${id}`);
         setProduct(res.data);
       } catch (err) {
         console.error('Error fetching product', err);
@@ -23,7 +23,7 @@ function ProductDetail({ refreshCart }) {
 
   const handleAddToCart = async () => {
     try {
-      await axios.post('http://localhost:3001/api/cart', { productId: product.id, quantity: 1 });
+      await axios.post('https://amazon-clone-0344.onrender.com/api/cart', { productId: product.id, quantity: 1 });
       if (refreshCart) refreshCart();
     } catch (err) {
       console.error('Error adding to cart', err);
@@ -37,7 +37,7 @@ function ProductDetail({ refreshCart }) {
 
   const handleAddToWishlist = async () => {
     try {
-      await axios.post('http://localhost:3001/api/wishlist', { productId: product.id });
+      await axios.post('https://amazon-clone-0344.onrender.com/api/wishlist', { productId: product.id });
       alert('Added to Wish List!');
     } catch (err) {
       if (err.response && err.response.data.error === 'Product already in wishlist') {

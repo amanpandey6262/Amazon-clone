@@ -15,7 +15,7 @@ function Home({ refreshCart }) {
   useEffect(() => {
     const fetchCategories = async () => {
       try {
-        const res = await axios.get('http://localhost:3001/api/categories');
+        const res = await axios.get('https://amazon-clone-0344.onrender.com/api/categories');
         setCategories(['All', ...res.data]);
       } catch (err) {
         console.error('Error fetching categories', err);
@@ -28,7 +28,7 @@ function Home({ refreshCart }) {
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        let url = 'http://localhost:3001/api/products';
+        let url = 'https://amazon-clone-0344.onrender.com/api/products';
         const params = [];
         if (search) params.push(`search=${encodeURIComponent(search)}`);
         if (activeCategory !== 'All') params.push(`category=${encodeURIComponent(activeCategory)}`);
@@ -45,7 +45,7 @@ function Home({ refreshCart }) {
 
   const handleAddToCart = async (productId) => {
     try {
-      await axios.post('http://localhost:3001/api/cart', { productId, quantity: 1 });
+      await axios.post('https://amazon-clone-0344.onrender.com/api/cart', { productId, quantity: 1 });
       if (refreshCart) refreshCart();
     } catch (err) {
       console.error('Error adding to cart', err);

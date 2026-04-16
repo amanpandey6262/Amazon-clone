@@ -20,7 +20,7 @@ function ProductCard({ id, title, price, image, category, onAddToCart }) {
   const handleAddToWishlist = async (e) => {
     e.stopPropagation();
     try {
-      await axios.post('http://localhost:3001/api/wishlist', { productId: id });
+      await axios.post('https://amazon-clone-0344.onrender.com/api/wishlist', { productId: id });
       alert('Added to Wish List!');
     } catch (err) {
       if (err.response && err.response.data.error === 'Product already in wishlist') {
