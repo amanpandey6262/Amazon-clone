@@ -1,0 +1,132 @@
+.home-page { background: var(--amazon-bg); }
+
+/* Hero Banner */
+.hero-banner {
+  min-height: 380px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  transition: background 0.8s ease;
+}
+.hero-content {
+  text-align: center;
+  z-index: 1;
+  padding: 40px 24px;
+  animation: fadeIn 0.5s ease;
+}
+@keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+.hero-title { font-size: 48px; font-weight: 700; margin-bottom: 12px; }
+.hero-subtitle { font-size: 20px; color: #ccc; margin-bottom: 24px; }
+.hero-btn {
+  display: inline-block;
+  background: var(--amazon-orange);
+  color: #111;
+  padding: 12px 32px;
+  border-radius: 25px;
+  font-size: 16px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: background 0.2s, transform 0.2s;
+}
+.hero-btn:hover { background: var(--amazon-orange-dark); transform: scale(1.03); text-decoration: none; color: #111; }
+.hero-dots { position: absolute; bottom: 16px; left: 50%; transform: translateX(-50%); display: flex; gap: 8px; }
+.hero-dot {
+  width: 10px; height: 10px; border-radius: 50%;
+  background: rgba(255,255,255,0.4); border: none; cursor: pointer; transition: background 0.2s;
+}
+.hero-dot.active { background: var(--amazon-orange); }
+
+/* Home container */
+.home-container { max-width: 1500px; margin: 0 auto; padding: 16px; display: flex; flex-direction: column; gap: 16px; }
+
+/* Category Grid */
+.home-section {}
+.home-section-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+.category-card {
+  background: white;
+  border-radius: 4px;
+  padding: 20px;
+  text-decoration: none;
+  color: var(--amazon-text);
+  transition: box-shadow 0.2s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 6px;
+  border: 1px solid var(--amazon-border);
+}
+.category-card:hover { box-shadow: var(--shadow-md); text-decoration: none; color: var(--amazon-text); }
+.category-icon { font-size: 40px; }
+.category-name { font-size: 16px; font-weight: 700; }
+.category-count { font-size: 12px; color: var(--amazon-text-secondary); }
+.category-shop { font-size: 13px; color: var(--amazon-link); margin-top: 4px; }
+.category-card:hover .category-shop { text-decoration: underline; }
+
+/* Prime Banner */
+.prime-banner {
+  background: linear-gradient(135deg, #00A8E1, #0078A0);
+  border-radius: 4px;
+  overflow: hidden;
+}
+.prime-banner-content {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 20px 24px;
+  flex-wrap: wrap;
+}
+.prime-badge-large {
+  background: white;
+  color: #00A8E1;
+  font-size: 18px;
+  font-weight: 900;
+  padding: 6px 12px;
+  border-radius: 4px;
+  letter-spacing: 2px;
+  flex-shrink: 0;
+}
+.prime-banner-content h3 { color: white; font-size: 16px; margin-bottom: 4px; }
+.prime-banner-content p { color: rgba(255,255,255,0.85); font-size: 13px; }
+.prime-try-btn {
+  margin-left: auto;
+  background: var(--amazon-orange);
+  border: none;
+  padding: 10px 20px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 700;
+  color: #111;
+  white-space: nowrap;
+  transition: background 0.2s;
+}
+.prime-try-btn:hover { background: var(--amazon-orange-dark); }
+
+/* Products section */
+.home-products-section { background: white; border-radius: 4px; padding: 20px; }
+.section-header { display: flex; align-items: baseline; justify-content: space-between; margin-bottom: 16px; }
+.section-title { font-size: 20px; font-weight: 700; }
+.section-see-all { font-size: 13px; color: var(--amazon-link); }
+.section-see-all:hover { color: var(--amazon-link-hover); }
+
+.products-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 16px; }
+.products-grid-4 { grid-template-columns: repeat(4, 1fr); }
+
+@media (max-width: 1024px) {
+  .home-section-grid { grid-template-columns: repeat(2, 1fr); }
+  .products-grid-4 { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 768px) {
+  .hero-title { font-size: 28px; }
+  .hero-subtitle { font-size: 15px; }
+  .home-section-grid { grid-template-columns: repeat(2, 1fr); }
+  .products-grid { grid-template-columns: repeat(2, 1fr); }
+  .products-grid-4 { grid-template-columns: repeat(2, 1fr); }
+  .prime-banner-content { justify-content: center; text-align: center; }
+  .prime-try-btn { margin: 0 auto; }
+}
+@media (max-width: 480px) {
+  .products-grid { grid-template-columns: repeat(2, 1fr); gap: 8px; }
+}

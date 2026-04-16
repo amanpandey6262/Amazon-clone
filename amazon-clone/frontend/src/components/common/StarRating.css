@@ -1,0 +1,8 @@
+.star-rating { display: inline-flex; align-items: center; gap: 0; }
+.star { font-size: 16px; line-height: 1; }
+.star-full { color: var(--amazon-star); }
+.star-half { color: var(--amazon-star); opacity: 0.7; }
+.star-empty { color: #ccc; }
+.star-value { font-size: 13px; color: var(--amazon-link); margin-left: 4px; }
+.star-rating--lg .star { font-size: 22px; }
+.star-rating--lg .star-value { font-size: 15px; }

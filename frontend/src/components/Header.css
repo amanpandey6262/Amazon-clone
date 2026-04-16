@@ -1,0 +1,200 @@
+.header {
+  background-color: var(--amazon-blue-dark);
+  color: white;
+  display: flex;
+  align-items: center;
+  padding: 10px 20px;
+  gap: 20px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.header__logo {
+  width: 100px;
+  object-fit: contain;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+.header__search {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  border-radius: 4px;
+  overflow: hidden;
+  background-color: white;
+}
+
+.header__searchInput {
+  height: 40px;
+  padding: 10px;
+  border: none;
+  width: 100%;
+  outline: none;
+  color: black;
+}
+
+.header__searchIcon {
+  background-color: var(--amazon-orange);
+  padding: 10px;
+  height: 40px !important;
+  width: 45px;
+  color: #333;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.header__nav {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.header__option {
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.header__optionLineOne {
+  font-size: 12px;
+  color: #ccc;
+}
+
+.header__optionLineTwo {
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.header__optionBasket {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  cursor: pointer;
+}
+
+.header__basketCount {
+  color: var(--amazon-orange);
+  font-weight: 700;
+  font-size: 16px;
+}
+
+.subheader {
+  background-color: var(--amazon-blue-light);
+  color: white;
+  padding: 8px 20px;
+  display: flex;
+  gap: 15px;
+  font-size: 14px;
+}
+
+.subheader span {
+  cursor: pointer;
+}
+
+.subheader span:hover {
+  border: 1px solid white;
+  margin: -1px;
+}
+
+/* Account Dropdown */
+.header__accountDropdownTrigger {
+  position: relative;
+}
+
+.header__accountDropdown {
+  position: absolute;
+  top: 100%;
+  right: -40px;
+  z-index: 999;
+  padding-top: 10px;
+  animation: dropdownFadeIn 0.15s ease-out;
+}
+
+@keyframes dropdownFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.header__dropdownArrow {
+  width: 16px;
+  height: 16px;
+  background: white;
+  transform: rotate(45deg);
+  position: absolute;
+  top: 4px;
+  right: 50px;
+  box-shadow: -2px -2px 4px rgba(0,0,0,0.08);
+  z-index: 0;
+}
+
+.header__dropdownContent {
+  background: white;
+  border-radius: 4px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+  display: flex;
+  gap: 0;
+  min-width: 340px;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.header__dropdownColumn {
+  padding: 16px 20px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.header__dropdownColumn h4 {
+  font-size: 16px;
+  font-weight: 700;
+  color: #0F1111;
+  margin-bottom: 10px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid #ddd;
+}
+
+.header__dropdownColumn a {
+  color: #444;
+  font-size: 13px;
+  padding: 5px 0;
+  text-decoration: none;
+  transition: color 0.15s;
+}
+
+.header__dropdownColumn a:hover {
+  color: var(--amazon-orange);
+  text-decoration: underline;
+}
+
+.header__dropdownDivider {
+  width: 1px;
+  background-color: #ddd;
+}
+
+@media (max-width: 768px) {
+  .header {
+    flex-wrap: wrap;
+    padding: 10px;
+    gap: 10px;
+  }
+  .header__search {
+    order: 3;
+    flex-basis: 100%;
+  }
+  .header__nav {
+    flex: 1;
+    justify-content: flex-end;
+  }
+}

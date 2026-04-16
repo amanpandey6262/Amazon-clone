@@ -1,0 +1,78 @@
+.order-confirm-page { background: var(--amazon-bg); min-height: 80vh; padding: 16px; }
+.order-confirm-container { max-width: 1100px; margin: 0 auto; }
+
+.order-confirm-header {
+  background: white; border-radius: 4px; padding: 24px 28px;
+  display: flex; align-items: center; gap: 20px; margin-bottom: 16px;
+  border-left: 5px solid var(--amazon-green);
+}
+.confirm-checkmark {
+  width: 56px; height: 56px; background: var(--amazon-green); color: white;
+  border-radius: 50%; display: flex; align-items: center; justify-content: center;
+  font-size: 28px; font-weight: 700; flex-shrink: 0;
+}
+.order-confirm-header h1 { font-size: 24px; font-weight: 400; margin-bottom: 4px; }
+.order-confirm-header p { font-size: 14px; color: var(--amazon-text-secondary); }
+
+.order-confirm-body { display: flex; gap: 16px; align-items: flex-start; }
+.order-confirm-main { flex: 1; display: flex; flex-direction: column; gap: 16px; }
+
+.confirm-card { background: white; border-radius: 4px; padding: 20px 24px; border: 1px solid var(--amazon-border); }
+.confirm-card h3 { font-size: 17px; font-weight: 700; margin-bottom: 12px; padding-bottom: 10px; border-bottom: 1px solid var(--amazon-border); }
+
+.delivery-date { font-size: 20px; color: var(--amazon-green); font-weight: 700; margin-bottom: 6px; }
+
+.confirm-order-id { margin-bottom: 16px; }
+.order-id-display { font-size: 15px; margin: 6px 0 4px; }
+.text-orange { color: var(--amazon-orange); }
+
+.confirm-items { display: flex; flex-direction: column; gap: 0; }
+.confirm-item { display: flex; gap: 12px; padding: 12px 0; border-bottom: 1px solid var(--amazon-border); align-items: flex-start; }
+.confirm-item:last-child { border-bottom: none; }
+.confirm-item img { width: 70px; height: 70px; object-fit: contain; border: 1px solid var(--amazon-border); border-radius: 3px; }
+.confirm-item-info { flex: 1; }
+.confirm-item-name { font-size: 14px; line-height: 1.4; margin-bottom: 4px; }
+.confirm-item-price { font-size: 15px; font-weight: 700; white-space: nowrap; }
+
+.confirm-totals { display: flex; flex-direction: column; gap: 8px; margin-top: 12px; padding-top: 12px; border-top: 1px solid var(--amazon-border); }
+.confirm-total-row { display: flex; justify-content: space-between; font-size: 14px; }
+.confirm-grand-total { font-size: 18px; font-weight: 700; padding-top: 8px; border-top: 1px solid var(--amazon-border); }
+
+/* Status Tracker */
+.confirm-status-track {}
+.status-track { display: flex; align-items: flex-start; gap: 0; margin-top: 8px; }
+.status-step {
+  display: flex; flex-direction: column; align-items: center; gap: 6px;
+  flex: 1; font-size: 12px; text-align: center; color: #aaa; position: relative;
+}
+.status-step::after {
+  content: ''; position: absolute; top: 10px; left: 50%; width: 100%;
+  height: 2px; background: #ddd; z-index: 0;
+}
+.status-step:last-child::after { display: none; }
+.status-dot {
+  width: 20px; height: 20px; border-radius: 50%; background: #ddd;
+  border: 2px solid #ccc; z-index: 1; flex-shrink: 0;
+}
+.status-step.active .status-dot { background: var(--amazon-orange); border-color: var(--amazon-orange-dark); }
+.status-step.active { color: var(--amazon-text); font-weight: 700; }
+
+/* Sidebar */
+.order-confirm-sidebar { width: 250px; flex-shrink: 0; display: flex; flex-direction: column; gap: 12px; }
+.confirm-actions { background: white; border-radius: 4px; padding: 20px; border: 1px solid var(--amazon-border); display: flex; flex-direction: column; gap: 10px; }
+.confirm-action-btn { display: block; padding: 10px 16px; border-radius: 20px; font-size: 14px; text-align: center; text-decoration: none; border: 1px solid; transition: all 0.15s; cursor: pointer; }
+.confirm-action-primary { background: var(--amazon-orange); border-color: var(--amazon-orange-dark); color: #111; font-weight: 700; }
+.confirm-action-primary:hover { background: var(--amazon-orange-dark); text-decoration: none; color: #111; }
+.confirm-action-secondary { background: white; border-color: var(--amazon-border); color: var(--amazon-text); }
+.confirm-action-secondary:hover { background: var(--amazon-bg); text-decoration: none; color: var(--amazon-text); }
+.confirm-help { background: white; border-radius: 4px; padding: 16px; border: 1px solid var(--amazon-border); }
+.confirm-help h4 { font-size: 15px; margin-bottom: 10px; }
+.confirm-help p { margin-bottom: 6px; }
+.confirm-help a { color: var(--amazon-link); font-size: 13px; }
+.confirm-help a:hover { color: var(--amazon-link-hover); }
+
+@media (max-width: 768px) {
+  .order-confirm-body { flex-direction: column; }
+  .order-confirm-sidebar { width: 100%; }
+  .status-track { overflow-x: auto; }
+}
